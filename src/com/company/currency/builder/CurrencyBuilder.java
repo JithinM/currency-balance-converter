@@ -6,6 +6,7 @@ import com.company.common.CurrencyType;
 import com.company.currency.Currency;
 import com.company.currency.Denomination;
 import com.company.currency.UsDollarCurrency;
+import com.company.currency.YenCurrency;
 import com.company.repository.CurrencyRepository;
 
 public class CurrencyBuilder {
@@ -31,9 +32,16 @@ public class CurrencyBuilder {
 				currency = new UsDollarCurrency(denom);
 				break;
 
+			case JPY:
+
+				CurrencyRepository repoYen = new CurrencyRepository();
+				List<Denomination> denomYen = repoYen.getYenDenominations();
+				currency = new YenCurrency(denomYen);
+				break;
+
 			default:
 
-				System.out.println("Unkonw CurrencyType " + type);
+				System.out.println("Unknown CurrencyType " + type);
 			}
 
 		}

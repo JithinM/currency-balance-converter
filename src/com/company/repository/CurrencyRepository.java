@@ -54,5 +54,30 @@ public class CurrencyRepository {
 		return null;
 	}
 	
+	/**
+	 * get List of JPY (Japanese Yen) Denomination
+	 * @return
+	 */
+	public List<Denomination> getYenDenominations(){
+		
+		List<Denomination> denominations = new ArrayList<Denomination>();
+		
+		// Japanese Yen denominations (values in smallest unit - 1 yen)
+		// Coins
+		denominations.add(new Denomination("1 Yen", 1));
+		denominations.add(new Denomination("5 Yen", 5));
+		denominations.add(new Denomination("10 Yen", 10));
+		denominations.add(new Denomination("50 Yen", 50));
+		denominations.add(new Denomination("100 Yen", 100));
+		denominations.add(new Denomination("500 Yen", 500));
+		
+		// Bills (in yen units)
+		denominations.add(new Denomination("1000 Yen", 1000));
+		denominations.add(new Denomination("2000 Yen", 2000));
+		denominations.add(new Denomination("5000 Yen", 5000));
+		denominations.add(new Denomination("10000 Yen", 10000));
+		
+		return denominations;
+	}
 
 }
