@@ -15,7 +15,7 @@ public enum CurrencyType {
 	 */
 	INR,
 	/**
-	 * 
+	 * Japanese Yen
 	 */
 	JPY
 }
